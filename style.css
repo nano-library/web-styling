@@ -111,6 +111,10 @@ th {
     color: var(--table-head);
 }
 
+.sub-contents {
+    text-indent: 2em;
+}
+
 tr {
     color: var(--table-row);
 }
