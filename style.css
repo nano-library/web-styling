@@ -1,0 +1,160 @@
+:root {
+    --background: #FDFAF8;
+    --nav: #FFFFFF;
+    --text: #4A6741;
+    --links: #5B8FD4;
+    --border: #F0D6E8;
+
+    --h2: #F08FB0;
+    --h3: #7BBF7A;
+    --h4: #6AAEE0;
+
+    --blockquote: #C4AEE8;
+    --tag: #F08FB0;
+    --badge: #6AAEE0;
+    --caption: #7BBF7A;
+    --table-head: #C4AEE8;
+    --table-row: #FDFAF8;
+    --tooltip: #F7C5A0;
+}
+
+body {
+    margin-left: 0%;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.45;
+    background-color: var(--background);
+}
+
+#navigation {
+    max-width: 800px;          
+    margin: 2rem auto;        
+    padding: 1rem;
+}
+
+.concept-nav {
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    gap: 1rem;
+}
+
+.concept-nav .nav-btn {
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    border: none;
+    border-radius: 10px;
+    color: var(--links);
+    background: var(--nav);
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+#title {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+}
+
+#chapter {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    text-align: justify;
+}
+
+hr  {
+  border: 0;
+  height: 1px;
+  background-color: var(--border);
+}   
+
+li {
+    
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+a {
+    text-decoration:none;
+    color: var(--links);
+}
+
+h2 {
+    color: var(--h2);
+}
+
+h3 {
+    color: var(--h3);
+}
+
+h4 {
+    color: var(--h4);
+}
+
+span {
+    color: var(--badge);
+}
+
+figcaption {
+    color: var(--caption);
+}
+
+p {
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    color: var(--text);
+}
+
+kbd {
+    color: var(--tag);
+}
+
+abbr {
+    color: var(--tooltip);
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: large;
+}
+
+img {
+  width: 100%;       
+  max-width: 400px; 
+  height: auto;     
+}
+
+@media (max-width: 640px){
+    #title {
+        font-size: smaller;
+        text-align: center;
+    }
+
+    .concept-nav {
+        flex-direction: column;     
+        align-items: stretch;       
+        gap: 0.6rem;
+    }
+
+    .concept-nav .nav-btn {
+        width: 100%;
+        border-radius: 8px;
+        text-align: center;
+    }
+}
