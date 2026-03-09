@@ -107,6 +107,14 @@ figcaption {
     color: var(--caption);
 }
 
+th {
+    color: var(--table-head);
+}
+
+tr {
+    color: var(--table-row);
+}
+
 p {
     padding: 0;
     border: 0;
@@ -114,6 +122,10 @@ p {
     font-style: inherit;
     font-size: 100%;
     font-family: inherit;
+    color: var(--text);
+}
+
+ul, li {
     color: var(--text);
 }
 
