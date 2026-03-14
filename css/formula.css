@@ -1,0 +1,136 @@
+.formula-card {
+    background: #FDFAF8;
+    border: 1.5px dashed var(--border);
+    border-radius: 18px;
+    padding: 20px 24px;
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+}
+
+.formula-label {
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blockquote);
+    margin-bottom: 10px;
+}
+
+.formula {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--text);
+    background: var(--nav);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: inline-block;
+}
+
+.formula span.var { 
+    color: var(--h4); 
+    font-style: italic; 
+}
+
+.formula span.op  { 
+    color: var(--h2); 
+}
+
+.frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    gap: 2px;
+    margin: 0 4px;
+}
+
+.frac-num {
+    border-bottom: 1.5px solid var(--text);
+    padding: 0 6px 3px;
+    text-align: center;
+}
+
+.frac-den {
+    padding: 3px 6px 0;
+    text-align: center;
+}
+
+.where-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 4px 0 8px;
+    padding: 14px 18px;
+    background: var(--background);
+    border-left: 3px solid var(--border);
+    border-radius: 0 14px 14px 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text);
+    animation: fadeUp 0.5s ease both;
+}
+
+.where-label {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--blockquote);
+    margin-bottom: 4px;
+}
+
+.where-term {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.where-term .term-sym {
+    color: var(--h4);
+    font-style: italic;
+    min-width: 40px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.where-term .term-sep {
+    color: var(--border);
+    flex-shrink: 0;
+}
+
+.where-term .term-desc {
+    color: var(--text);
+    font-size: 0.83rem;
+}
+
+.where-block.pink { 
+    border-left-color: var(--h2); 
+}
+
+.where-block.blue { 
+    border-left-color: var(--h4); 
+}
+
+.where-block.green { 
+    border-left-color: var(--h3); 
+}
+
+.where-block.lavender { 
+    border-left-color: var(--blockquote); 
+}
+
+
+
+.formula-label, .formula-number {
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blockquote);
+    margin-bottom: 10px;
+}

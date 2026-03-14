@@ -1,0 +1,24 @@
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.divider-line {
+    height: 1.5px;
+    width: 80px;
+    background: linear-gradient(to right, transparent, var(--border));
+    border-radius: 2px;
+}
+
+.divider-line:last-child {
+    background: linear-gradient(to left, transparent, var(--border));
+}
+
+.divider-flower { 
+    font-size: 1rem; 
+    color: var(--h2); 
+}

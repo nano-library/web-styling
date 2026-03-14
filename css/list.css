@@ -1,0 +1,97 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 8px 0;
+    counter-reset: list-counter;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--nav);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    box-shadow: 0 2px 8px rgba(240, 143, 176, 0.07);
+    counter-increment: list-counter;
+    transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease,background 0.2s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 16px rgba(240, 143, 176, 0.15);
+    background: var(--highlight);
+    border-color: var(--h2);
+}
+
+ul li::before {
+    content: counter(list-counter);
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--highlight);
+    border: 1.5px solid var(--border);
+    color: var(--h2);
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s cubic-bezier(.34,1.56,.64,1);
+}
+
+ul li:hover::before {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+ul li:nth-child(4n+1)::before { background: var(--highlight);   border: 1.5px solid var(--border);    color: var(--h2); }
+ul li:nth-child(4n+2)::before { background: #EEF6FD;          border: 1.5px solid #cce3f6;        color: var(--h4); }
+ul li:nth-child(4n+3)::before { background: #F0FAF0;          border: 1.5px solid #c5e8c4;        color: var(--h3); }
+ul li:nth-child(4n+4)::before { background: #F3EFFE;          border: 1.5px solid #ddd0f7;        color: var(--blockquote); }
+
+ul li.no-num {
+    display: block;
+    padding-left: 18px;
+    counter-increment: none;
+}
+
+ul li.no-num::before {
+    display: none;
+}
+
+ul ul {
+    counter-reset: none; 
+    margin: 6px 0 6px 16px;
+    gap: 6px;
+}
+
+ul ul li.no-num::before {
+    display: none;
+}
+
+.key-dot {
+  background: var(--h2);
+}
+
+@media (max-width: 600px) {
+    ul li {
+        padding: 10px 14px;
+        font-size: 0.84rem;
+        border-radius: 12px;
+    }
+
+    ul li::before {
+        min-width: 22px;
+        height: 22px;
+        font-size: 0.68rem;
+    }
+}

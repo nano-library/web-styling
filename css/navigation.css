@@ -1,0 +1,122 @@
+.nav-button {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--nav);
+    border: 1.5px solid var(--border);
+    border-radius: 50px;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 14px rgba(240,143,176,0.13);
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), box-shadow 0.22s ease, background 0.2s ease, border-color 0.2s ease;
+    animation: fadeIn 0.5s ease both;
+}
+
+.nav-prev {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    padding: 16px 12px;
+    font-size: 0.76rem;
+    color: var(--blockquote);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    animation-delay: 0.05s;
+}
+
+.nav-prev .button-icon {
+    writing-mode: horizontal-tb;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.nav-prev:hover {
+    background: #F3EFFE;
+    border-color: var(--blockquote);
+    box-shadow: 0 6px 22px rgba(196,174,232,0.25);
+    transform: translateY(-50%) translateX(-4px) scale(1.05);
+}
+
+.nav-prev.is-first {
+    color: #d0c0e0;
+    border-color: #eee0f8;
+    cursor: default;
+    box-shadow: none;
+}
+
+.nav-prev.is-first:hover {
+    transform: translateY(-50%);
+    background: var(--nav);
+    border-color: #eee0f8;
+    box-shadow: none;
+}
+
+.nav-prev.is-first {
+    display: flex;
+}
+
+.nav-next.is-last {
+    color: #b0c8e0;
+    border-color: #d8ecf8;
+    cursor: default;
+    box-shadow: none;
+}
+
+.nav-next.is-last:hover {
+    transform: translateY(-50%);
+    background: var(--nav);
+    border-color: #d8ecf8;
+    box-shadow: none;
+}
+
+.nav-next {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    padding: 16px 12px;
+    font-size: 0.76rem;
+    color: var(--h4);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    animation-delay: 0.1s;
+}
+
+.nav-next .button-icon {
+    writing-mode: horizontal-tb;
+    font-size: 1.1rem;
+    margin-top: 4px;
+}
+
+.nav-next:hover {
+    background: #EEF6FD;
+    border-color: var(--h4);
+    box-shadow: 0 6px 22px rgba(106,174,224,0.25);
+    transform: translateY(-50%) translateX(4px) scale(1.05);
+}
+
+.nav-list {
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 11px 22px;
+    font-size: 0.82rem;
+    color: var(--h2);
+    animation-delay: 0.15s;
+}
+
+.nav-list .button-icon { 
+    font-size: 1rem; 
+}
+
+.nav-list:hover {
+    background: var(--highlight);
+    border-color: var(--h2);
+    box-shadow: 0 6px 22px rgba(240,143,176,0.25);
+    transform: translateX(-50%) translateY(-4px) scale(1.04);
+}   

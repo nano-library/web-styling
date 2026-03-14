@@ -1,0 +1,129 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+mjx-container {
+	pointer-events: none;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #F0D6E8 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+p + p {
+    text-indent: 1.5em;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 52px 24px 120px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 10px;
+    animation: page-header-fadeDown 0.55s ease 0.05s both;
+}
+
+@keyframes page-header-fadeDown {
+    from { 
+        opacity: 0; 
+        transform: translateY(-18px); 
+    }
+    to   { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.topic-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #F3EFFE;
+    border: 1.5px solid #ddd0f7;
+    border-radius: 50px;
+    padding: 4px 14px;
+    font-size: 0.72rem;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    color: var(--blockquote);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.page-meta {
+    margin-top: 8px;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--blockquote);
+}
+
+.content-body { 
+    display: flex; 
+    flex-direction: 
+    column; gap: 20px; 
+}
+
+.section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    animation: fadeUp 0.5s ease both;
+}
+
+.section-head-number {
+    width: 34px; 
+    height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.section-head h2 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.76rem;
+    font-style: italic;
+    color: #c8b8d0;
+}

@@ -1,0 +1,19 @@
+:root {
+    --background: #FDFAF8;
+    --nav: #FFFFFF;
+    --text: #4A6741;
+    --links: #5B8FD4;
+    --border: #F0D6E8;
+    --highlight: #FFF0F5;
+    --h2: #F08FB0;
+    --h3: #7BBF7A;
+    --h4: #6AAEE0;
+    --mark: #F5E6A3;
+    --code: #F7C5A0;
+    --blockquote: #C4AEE8;
+    --tag: #F08FB0;
+    --badge: #6AAEE0;
+    --caption: #7BBF7A;
+    --hr: #F0D6E8;
+    --card-text: #7a8a78;
+}

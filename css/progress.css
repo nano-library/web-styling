@@ -1,0 +1,92 @@
+.page-header {
+	text-align: center;
+	margin-bottom: 10px;
+	animation: fadeDown 0.55s ease 0.05s both;
+}
+
+.topic-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	background: #F3EFFE;
+	border: 1.5px solid #ddd0f7;
+	border-radius: 50px;
+	padding: 4px 14px;
+	font-size: 0.72rem;
+	font-family: 'Comfortaa', sans-serif;
+	font-weight: 700;
+	color: var(--blockquote);
+	margin-bottom: 14px;
+	letter-spacing: 0.5px;
+}
+
+.page-header h1 {
+	font-size: clamp(1.7rem, 4vw, 2.4rem);
+	font-weight: 700;
+	color: var(--text);
+	line-height: 1.2;
+	margin: 0;
+	}
+
+.page-meta {
+	margin-top: 8px;
+	font-size: 0.82rem;
+	font-style: italic;
+	color: var(--blockquote);
+	line-height: 1.5;
+}
+
+.progress-bar-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 22px;
+    margin: 22px auto 0;
+    width: min(280px, 90%);  
+    text-align: left;
+    max-width: 260px;
+}
+
+.progress-label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.68rem;
+	color: #c0b0cc;
+	margin-bottom: 5px;
+	font-family: 'Comfortaa', sans-serif;
+}
+
+.progress-track {
+	height: 6px;
+	background: var(--border);
+	border-radius: 50px;
+	overflow: hidden;
+}
+
+.progress-bar-wrap .progress-label:not(:first-child) {
+  	margin-top: 6px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, var(--blockquote), var(--h4));
+    border-radius: 50px;
+    transition: width 0.8s ease; 
+}
+
+@media (max-width: 600px) {
+	.page-header h1 {
+		font-size: clamp(1.4rem, 6vw, 1.8rem);
+	}
+
+	.page-meta {
+		font-size: 0.78rem;
+	}
+
+	.topic-chip {
+		font-size: 0.68rem;
+		padding: 3px 12px;
+	}
+}
