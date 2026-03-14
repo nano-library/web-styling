@@ -118,6 +118,23 @@ h1 {
     color: var(--text);
 }
 
+mark {
+    background: var(--mark);
+    color: #7a6a20;
+    border-radius: 5px;
+    padding: 1px 5px;
+    font-style: normal;
+}
+
+code {
+    background: var(--code);
+    color: #7a4010;
+    border-radius: 7px;
+    padding: 1px 7px;
+    font-size: 0.88em;
+    font-family: 'Courier New', monospace;
+}
+
 footer {
     position: relative;
     z-index: 1;
