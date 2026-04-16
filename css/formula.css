@@ -123,8 +123,6 @@
     border-left-color: var(--blockquote); 
 }
 
-
-
 .formula-label, .formula-number {
     font-size: 0.7rem;
     font-family: 'Comfortaa', sans-serif;
@@ -133,4 +131,15 @@
     text-transform: uppercase;
     color: var(--blockquote);
     margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .formula {
+        font-size: 0.85rem;     
+        padding: 10px 12px;
+    }
+
+    .formula-card {
+        padding: 14px 12px;
+    }
 }
