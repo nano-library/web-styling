@@ -10,7 +10,26 @@
     border: 1.5px solid var(--border);
     border-radius: 16px;
     padding: 16px 18px;
-    box-shadow: 0 1px 6px rgba(240,143,176,0.07);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ultra-subtle watercolor wash on mini-cards */
+.mini-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-soft);
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.mini-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .mini-card-title {
@@ -26,8 +45,8 @@
 .mini-card:nth-child(4n+4) .mini-card-title  { color: var(--blockquote); }
 
 .mini-card-title a {
-	color:inherit;
-	text-decoration:none;
+    color: inherit;
+    text-decoration: none;
 }
 
 .mini-card p {
@@ -44,8 +63,26 @@
     font-size: 0.95rem;
     line-height: 1.75;
     color: var(--text);
-    box-shadow: 0 2px 10px rgba(240,143,176,0.08);
+    box-shadow: var(--shadow-md);
     animation: fadeUp 0.5s ease 0.1s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-soft);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.intro-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .callout {
@@ -57,12 +94,31 @@
     font-size: 0.88rem;
     line-height: 1.7;
     animation: fadeUp 0.5s ease both;
+    position: relative;
+    overflow: hidden;
 }
 
-.callout-icon { 
+/* Subtle gradient overlay on all callouts */
+.callout::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-blend);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.callout > * {
+    position: relative;
+    z-index: 1;
+}
+
+.callout-icon {
     font-size: 1.4rem;
-    flex-shrink: 0; 
-    margin-top: 1px; 
+    flex-shrink: 0;
+    margin-top: 1px;
 }
 
 .callout-title {
@@ -72,44 +128,42 @@
     margin-bottom: 4px;
 }
 
-.callout.note   { 
-    background: #EEF6FD; 
-    border: 1.5px solid #cce3f6; 
-    color: #4a7090; 
+.callout.note {
+    background: var(--callout-note-bg);
+    border: 1.5px solid var(--callout-note-border);
+    color: var(--callout-note-text, #3E6278);
 }
 
-.callout.note .callout-title { 
-    color: var(--h4); 
+.callout.note .callout-title {
+    color: var(--h4);
 }
 
-.callout.tip    { 
-    background: #F0FAF0; 
-    border: 1.5px solid #c5e8c4; 
-    color: #3d6b3a; 
+.callout.tip {
+    background: var(--callout-tip-bg);
+    border: 1.5px solid var(--callout-tip-border);
+    color: var(--callout-tip-text, #3F6C5A);
 }
 
-.callout.tip .callout-title  { 
+.callout.tip .callout-title {
     color: var(--h3);
 }
 
-.callout.warn   { 
-    background: #FEF6EE; 
-    border: 1.5px solid #f8dfc0; 
-    color: #8a5a2a;
+.callout.warn {
+    background: var(--callout-warn-bg);
+    border: 1.5px solid var(--callout-warn-border);
+    color: var(--callout-warn-text, #A05E4E);
 }
 
-.callout.warn .callout-title { 
-    color: var(--code); 
-    filter: brightness(0.8); 
+.callout.warn .callout-title {
+    color: var(--code);
 }
 
-.callout.def    { 
-    background: var(--highlight); 
-    border: 1.5px solid var(--border); 
-    color: #7a4060; 
+.callout.def {
+    background: var(--callout-def-bg);
+    border: 1.5px solid var(--callout-def-border);
+    color: var(--callout-def-text, #B06A76);
 }
 
-.callout.def .callout-title  { 
-    color: var(--h2); 
+.callout.def .callout-title {
+    color: var(--h2);
 }
-

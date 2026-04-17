@@ -2,6 +2,7 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
+    font-family: "Times New Roman", serif;
 }
 
 mjx-container {
@@ -10,22 +11,83 @@ mjx-container {
 	-webkit-user-select: none;
 }
 
+/* Base layering */
 body {
-    background-color: var(--background);
-    font-family: 'Nunito', sans-serif;
-    color: var(--text);
-    min-height: 100vh;
+    background:
+        var(--gradient-main),
+        var(--gradient-soft),
+        var(--background);
+    background-blend-mode: screen;
+    animation: watercolorFlow 18s ease-in-out infinite alternate;
 }
 
+/* Extra floating layer using pseudo-element */
 body::before {
-    content: '';
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    
+    background: radial-gradient(
+        circle at 60% 30%,
+        rgba(230, 166, 200, 0.25),
+        rgba(140, 182, 214, 0.2),
+        rgba(185, 178, 214, 0.2),
+        transparent 70%
+    );
+
+    filter: blur(60px);
+    opacity: 0.7;
+    animation: watercolorDrift 25s ease-in-out infinite;
+}
+
+/* Slow gradient morph */
+@keyframes watercolorFlow {
+    0% {
+        background-position: 20% 30%, 80% 70%, center;
+    }
+    100% {
+        background-position: 40% 60%, 60% 40%, center;
+    }
+}
+
+/* Floating pigment motion */
+@keyframes watercolorDrift {
+    0% {
+        transform: translate(0%, 0%) scale(1);
+    }
+    50% {
+        transform: translate(-5%, 5%) scale(1.05);
+    }
+    100% {
+        transform: translate(5%, -5%) scale(1);
+    }
+}
+
+body::after {
+    content: "";
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(circle, #F0D6E8 1px, transparent 1px);
-    background-size: 28px 28px;
-    opacity: 0.4;
     pointer-events: none;
-    z-index: 0;
+
+    background-image: radial-gradient(
+        rgba(255,255,255,0.6) 1px,
+        transparent 1px
+    );
+
+    background-size: 120px 120px;
+    opacity: 0.25;
+
+    animation: sparkleMove 40s linear infinite;
+}
+
+@keyframes sparkleMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100px);
+    }
 }
 
 p + p {
@@ -66,7 +128,6 @@ main {
     border-radius: 50px;
     padding: 4px 14px;
     font-size: 0.72rem;
-    font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
     color: var(--blockquote);
     margin-bottom: 14px;
@@ -74,7 +135,6 @@ main {
 }
 
 h1 {
-    font-family: 'Comfortaa', sans-serif;
     font-size: clamp(1.7rem, 4vw, 2.4rem);
     font-weight: 700;
     color: var(--text);
@@ -114,7 +174,6 @@ h1 {
     justify-content: center;
     font-size: 0.75rem;
     font-weight: 700;
-    font-family: 'Comfortaa', sans-serif;
     flex-shrink: 0;
     padding: 0 6px;
     background: var(--nav);
@@ -123,7 +182,6 @@ h1 {
 }
 
 .section-head h2 {
-    font-family: 'Comfortaa', sans-serif;
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--text);

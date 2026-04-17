@@ -1,19 +1,110 @@
 :root {
-    --background: #FDFAF8;
+    /* Base */
+    --background: #FAF9FC;
     --nav: #FFFFFF;
-    --text: #4A6741;
-    --links: #5B8FD4;
-    --border: #F0D6E8;
-    --highlight: #FFF0F5;
-    --h2: #F08FB0;
-    --h3: #7BBF7A;
-    --h4: #6AAEE0;
-    --mark: #F5E6A3;
-    --code: #F7C5A0;
-    --blockquote: #C4AEE8;
-    --tag: #F08FB0;
-    --badge: #6AAEE0;
-    --caption: #7BBF7A;
-    --hr: #F0D6E8;
-    --card-text: #7a8a78;
+    --text: #4C4A57;
+    --links: #8CB6D6;
+    --border: #EFD6E0;
+    --highlight: #FDF6FA;
+
+    /* Core Accent Colors */
+    --pink: #E6A6C8;
+    --blue: #8CB6D6;
+    --lavender: #B9B2D6;
+    --peach: #F3E4D8;
+
+    /* 🌸 Watercolor Gradients */
+    --gradient-main: radial-gradient(
+        circle at 30% 40%,
+        rgba(230, 166, 200, 0.35),
+        rgba(185, 178, 214, 0.25),
+        rgba(140, 182, 214, 0.25),
+        transparent 70%
+    );
+
+    --gradient-soft: radial-gradient(
+        circle at 70% 60%,
+        rgba(140, 182, 214, 0.25),
+        rgba(230, 166, 200, 0.2),
+        transparent 70%
+    );
+
+    --gradient-blend: linear-gradient(
+        120deg,
+        rgba(230, 166, 200, 0.25),
+        rgba(185, 178, 214, 0.25),
+        rgba(140, 182, 214, 0.25)
+    );
+
+    /* Accents */
+    --h2: var(--pink);
+    --h3: #A8C6B8;
+    --h4: var(--blue);
+    --mark: var(--peach);
+    --code: #EAD7CF;
+    --blockquote: var(--lavender);
+    --tag: var(--pink);
+    --badge: var(--blue);
+    --caption: #9DBFCB;
+    --hr: var(--border);
+    --card-text: #6A6875;
+
+    /* Callouts with subtle gradients */
+    --callout-note-bg: linear-gradient(
+        135deg,
+        #F2F7FB,
+        rgba(140, 182, 214, 0.15)
+    );
+
+    --callout-tip-bg: linear-gradient(
+        135deg,
+        #F3F8F6,
+        rgba(168, 198, 184, 0.2)
+    );
+
+    --callout-warn-bg: linear-gradient(
+        135deg,
+        #FDF4F2,
+        rgba(243, 196, 180, 0.25)
+    );
+
+    --callout-def-bg: linear-gradient(
+        135deg,
+        #FDF6FA,
+        rgba(230, 166, 200, 0.2)
+    );
+
+    /* Borders */
+    --callout-note-border: #D2E3F0;
+    --callout-tip-border: #D3E6DF;
+    --callout-warn-border: #F4D6CF;
+    --callout-def-border: #EFD6E0;
+
+    /* Pattern */
+    --pattern-dot: rgba(230, 166, 200, 0.4);
+
+    /* Item backgrounds (soft watercolor cards) */
+    --item-blue-bg: linear-gradient(
+        135deg,
+        #F0F5F8,
+        rgba(140, 182, 214, 0.2)
+    );
+
+    --item-green-bg: linear-gradient(
+        135deg,
+        #F0F6F2,
+        rgba(168, 198, 184, 0.2)
+    );
+
+    --item-lavender-bg: linear-gradient(
+        135deg,
+        #F4F0F8,
+        rgba(185, 178, 214, 0.25)
+    );
+
+    /* Shadows – diffused like watercolor edges */
+    --shadow-sm: 0 2px 8px rgba(230, 166, 200, 0.08);
+    --shadow-md: 0 4px 16px rgba(140, 182, 214, 0.12);
+    --shadow-hover: 0 6px 20px rgba(140, 182, 214, 0.18);
+    --shadow-back: 0 3px 10px rgba(230, 166, 200, 0.12);
 }
