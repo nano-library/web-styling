@@ -1,32 +1,15 @@
 .formula-card {
-    background: var(--nav);
+    background: #FDFAF8;
     border: 1.5px dashed var(--border);
     border-radius: 18px;
     padding: 20px 24px;
     text-align: center;
     animation: fadeUp 0.5s ease both;
-    position: relative;
-    overflow: hidden;
-}
-
-.formula-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-soft);
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 0;
-    border-radius: inherit;
-}
-
-.formula-card > * {
-    position: relative;
-    z-index: 1;
 }
 
 .formula-label {
     font-size: 0.7rem;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -35,6 +18,7 @@
 }
 
 .formula {
+    font-family: 'Courier New', monospace;
     font-size: 1.1rem;
     color: var(--text);
     background: var(--nav);
@@ -42,24 +26,6 @@
     border-radius: 12px;
     padding: 12px 20px;
     display: inline-block;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-}
-
-.formula::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-blend);
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.formula > * {
-    position: relative;
-    z-index: 1;
 }
 
 .formula span.var { 
@@ -94,82 +60,33 @@
 .where-block {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
     margin: 4px 0 8px;
-    padding: 0;
-    background: transparent;
+    padding: 14px 18px;
+    background: var(--background);
     border-left: 3px solid var(--border);
     border-radius: 0 14px 14px 0;
+    font-family: 'Nunito', sans-serif;
     font-size: 0.85rem;
     line-height: 1.7;
     color: var(--text);
     animation: fadeUp 0.5s ease both;
-    position: relative;
-    overflow: hidden;
-}
-
-.where-block::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-main);
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 0;
 }
 
 .where-label {
+    font-family: 'Comfortaa', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: var(--blockquote);
-    margin-bottom: 8px;
-    padding: 0 18px;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 4px;
 }
 
 .where-term {
     display: flex;
     align-items: baseline;
     gap: 8px;
-    padding: 8px 18px;
-    position: relative;
-    z-index: 1;
-    transition: background 0.2s ease;
-}
-
-/* Four‑color alternating cycle — using color-mix() with root variables */
-.where-term:nth-child(4n+1) {
-    background: color-mix(in srgb, var(--pink) 6%, transparent);
-}
-
-.where-term:nth-child(4n+2) {
-    background: color-mix(in srgb, var(--blue) 5%, transparent);
-}
-
-.where-term:nth-child(4n+3) {
-    background: color-mix(in srgb, var(--h3) 6%, transparent);
-}
-
-.where-term:nth-child(4n+4) {
-    background: color-mix(in srgb, var(--lavender) 5%, transparent);
-}
-
-/* Extra depth overlay */
-.where-term::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-soft);
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.where-term:hover {
-    background: var(--highlight);
 }
 
 .where-term .term-sym {
@@ -208,6 +125,7 @@
 
 .formula-label, .formula-number {
     font-size: 0.7rem;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -223,9 +141,5 @@
 
     .formula-card {
         padding: 14px 12px;
-    }
-    
-    .where-term {
-        padding: 6px 14px;
     }
 }
