@@ -1,0 +1,104 @@
+.problem {
+  background: var(--nav, #fdf3f7);
+  border: 1.5px solid var(--border, #f0dbe6);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(240, 143, 176, 0.09);
+  margin-bottom: 2rem;
+}
+
+.problem-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--highlight, #fcf2f8);
+  border-bottom: 1.5px solid var(--border, #f0dbe6);
+}
+
+.problem-icon {
+  color: var(--h2, #b5678c);
+  font-size: 0.9rem;
+}
+
+.problem-title {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--h2, #b5678c);
+}
+
+.problem-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #b0a0b8;
+  margin-left: 2px;
+}
+
+.problem-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.problem-block {
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.problem-block.problem-section {
+  border-bottom: 1.5px dashed var(--border, #f0dbe6);
+}
+
+.block-label {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.problem-block.problem-section .block-label { color: var(--h4, #e28b9e); }
+.problem-block.solution-section .block-label { color: var(--h3, #7d6b8e); }
+
+.block-content {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--text, #2e2a2f);
+}
+
+.problem-part, .solution-part {
+    margin-bottom: 0.75rem;
+    gap: 8px;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.problem-part strong:first-child, .solution-part strong:first-child {
+    min-width: 28px;
+}
+.problem-part strong:first-child {
+    color: var(--h4, #e28b9e);
+}
+.solution-part strong:first-child {
+    color: var(--h3, #7d6b8e);
+}
+
+/* left accent bars */
+.problem-block.problem-section {
+  border-left: 3px solid var(--h4, #e28b9e);
+  padding-left: 20px;
+}
+
+.problem-block.solution-section {
+  border-left: 3px solid var(--h3, #7d6b8e);
+  padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+  .problem-block { padding: 14px 16px; }
+  .problem-header { padding: 12px 16px; flex-wrap: wrap; gap: 6px; }
+  .block-content { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
