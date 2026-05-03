@@ -24,13 +24,6 @@ ul li {
     transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease,background 0.2s ease;
 }
 
-ul li:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 16px rgba(240, 143, 176, 0.15);
-    background: var(--highlight);
-    border-color: var(--h2);
-}
-
 ul li::before {
     content: counter(list-counter);
     min-width: 26px;
@@ -47,10 +40,6 @@ ul li::before {
     justify-content: center;
     flex-shrink: 0;
     transition: transform 0.2s cubic-bezier(.34,1.56,.64,1);
-}
-
-ul li:hover::before {
-    transform: scale(1.2) rotate(-8deg);
 }
 
 ul li:nth-child(4n+1)::before { background: var(--highlight);   border: 1.5px solid var(--border);    color: var(--h2); }
