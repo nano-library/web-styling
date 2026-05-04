@@ -70,7 +70,49 @@
   color: var(--text, #2e2a2f);
 }
 
-.problem-part, .solution-part {
+.problem-parts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.problem-part {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #EEF6FD;
+  border: 1.5px solid #cce3f6;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.part-label {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--nav);
+  border: 1.5px solid #cce3f6;
+  color: var(--h4);
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.part-content {
+  flex: 1;
+}
+
+.solution-part {
     margin-bottom: 0.75rem;
     gap: 8px;
     align-items: baseline;
