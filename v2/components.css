@@ -360,9 +360,56 @@ tbody tr:nth-child(even):hover {
   background: var(--bg-raised);
 }
 
-/* ┌─────────────────────────────────────────────────────────┐
-   │  FIGURE / IMAGE                                         │
-   └─────────────────────────────────────────────────────────┘ */
+.figure-wrap img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  filter: brightness(0.92) contrast(1.06) saturate(0.85);
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.figure-wrap img:hover {
+  filter: brightness(1.02) contrast(1.08) saturate(1);
+  transform: scale(1.01);
+}
+
+.figure-wrap--framed {
+  padding: 6px;                   
+  background: linear-gradient(135deg, var(--border-bright), var(--border-base));
+  border-radius: var(--radius-md);
+}
+
+.figure-wrap--framed img {
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+}
+
+.figure-wrap--diagram {
+  background: var(--bg-overlay);
+  padding: 2rem;
+  border: 1px dashed var(--border-bright);
+}
+.figure-wrap--diagram img {
+  filter: brightness(1) contrast(1);   
+}
+
+.figure-placeholder {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-overlay);
+  border: 1px dashed var(--border-base);
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 1rem;
+}
+
 figure {
   margin: 2rem 0;
 }
