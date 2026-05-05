@@ -1,0 +1,81 @@
+
+:root {
+
+  /* ── Backgrounds ─────────────────────────────────────────── */
+  --bg-void:          #08070d;   /* deepest background          */
+  --bg-base:          #0e0c16;   /* page background             */
+  --bg-surface:       #141121;   /* card / panel base           */
+  --bg-raised:        #1b1830;   /* raised card, hover state    */
+  --bg-overlay:       #221f38;   /* tooltip, dropdown overlay   */
+
+  /* ── Parchment Text ──────────────────────────────────────── */
+  --text-primary:     #e6d8c0;   /* main reading text           */
+  --text-secondary:   #a9967e;   /* captions, meta, muted copy  */
+  --text-tertiary:    #6b5c4a;   /* placeholder, disabled       */
+  --text-inverse:     #0e0c16;   /* text on bright backgrounds  */
+
+  /* ── Gold — Aged Brass ───────────────────────────────────── */
+  --gold-bright:      #d4a84b;   /* headings, highlights        */
+  --gold-mid:         #b8883a;   /* borders, icons              */
+  --gold-dim:         #7a5c26;   /* subtle accents              */
+  --gold-subtle:      rgba(212,168,75, 0.08);
+  --gold-glow:        rgba(212,168,75, 0.20);
+  --gold-border:      rgba(212,168,75, 0.28);
+
+  /* ── Crimson — Forbidden Knowledge ──────────────────────── */
+  --crimson-bright:   #b52d3a;   /* warnings, strong callouts   */
+  --crimson-mid:      #8e2030;   /* borders on danger callouts  */
+  --crimson-subtle:   rgba(181, 45, 58, 0.10);
+
+  /* ── Mystic Violet — Arcane Arts ─────────────────────────── */
+  --mystic-bright:    #9d88cc;   /* chapter progress bar        */
+  --mystic-mid:       #7060a8;   /* subsection accent           */
+  --mystic-subtle:    rgba(112, 96, 168, 0.12);
+  --mystic-border:    rgba(112, 96, 168, 0.28);
+
+  /* ── Sage — Field Notes / Tips ───────────────────────────── */
+  --sage-bright:      #5eab8e;   /* tip callouts                */
+  --sage-mid:         #3d7a65;   /* borders on tips             */
+  --sage-subtle:      rgba(62, 122, 101, 0.10);
+
+  /* ── Amber — Concept Cards ───────────────────────────────── */
+  --amber-bright:     #d4923a;   /* note callouts               */
+  --amber-subtle:     rgba(212, 146, 58, 0.08);
+  --amber-border:     rgba(212, 146, 58, 0.25);
+
+  /* ── Borders & Dividers ──────────────────────────────────── */
+  --border-base:      #221e38;
+  --border-bright:    #352f55;
+  --border-faint:     #1a1730;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-sm:        0 2px 8px  rgba(0,0,0,0.45);
+  --shadow-md:        0 6px 24px rgba(0,0,0,0.55);
+  --shadow-lg:        0 14px 48px rgba(0,0,0,0.65);
+  --shadow-gold:      0 0 28px rgba(212,168,75,0.12);
+  --shadow-inset:     inset 0 1px 0 rgba(255,255,255,0.04);
+
+  /* ── Progress Bars ───────────────────────────────────────── */
+  --progress-track:   #1a1730;
+  --progress-topic:   var(--gold-bright);
+  --progress-chapter: var(--mystic-bright);
+
+  /* ── UI Interaction ──────────────────────────────────────── */
+  --hover-lift:       translateY(-2px);
+  --transition-fast:  0.18s ease;
+  --transition-mid:   0.32s ease;
+  --transition-slow:  0.55s ease;
+
+  /* ── Scrollbar ───────────────────────────────────────────── */
+  --scrollbar-track:  var(--bg-base);
+  --scrollbar-thumb:  #2f2a50;
+  --scrollbar-hover:  var(--gold-dim);
+
+  /* ── Layout Tokens ───────────────────────────────────────── */
+  --radius-sm:        4px;
+  --radius-md:        8px;
+  --radius-lg:        14px;
+  --content-width:    780px;
+  --index-width:      860px;
+  --side-pad:         clamp(1.25rem, 5vw, 3.5rem);
+}

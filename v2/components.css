@@ -1,0 +1,520 @@
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 3rem 0 1.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border-base);
+  position: relative;
+  counter-increment: section-counter;
+  counter-reset: subsection-counter;
+}
+
+.section-head::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-mid), transparent);
+}
+
+.section-head-number {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-head-number::before {
+  content: counter(section-counter, decimal-leading-zero);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold-mid);
+}
+
+.section-head-number::after {
+  content: '';
+  flex: 0 0 24px;
+  height: 1px;
+  background: var(--gold-dim);
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  SUBSECTION HEAD                                        │
+   └─────────────────────────────────────────────────────────┘ */
+.subsection-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 2rem 0 0.9rem;
+  counter-increment: subsection-counter;
+}
+
+.subsection-head::before {
+  content: counter(section-counter) '.' counter(subsection-counter);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--mystic-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 0.2rem;
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  LISTS                                                  │
+   └─────────────────────────────────────────────────────────┘ */
+.content-body ul,
+.content-body ol {
+  padding-left: 0;
+  list-style: none;
+  margin: 1rem 0 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.content-body li {
+  position: relative;
+  padding-left: 1.6rem;
+  line-height: 1.72;
+  color: var(--text-primary);
+}
+
+.content-body ul > li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  font-size: 0.42rem;
+  color: var(--gold-mid);
+  line-height: 1;
+}
+
+.content-body ol {
+  counter-reset: list-counter;
+}
+
+.content-body ol > li {
+  counter-increment: list-counter;
+}
+
+.content-body ol > li::before {
+  content: counter(list-counter) '.';
+  position: absolute;
+  left: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold-mid);
+  letter-spacing: 0.05em;
+  top: 0.22em;
+}
+
+/* Nested lists */
+.content-body li > ul {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.content-body li > ul > li::before {
+  content: '–';
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  top: 0.02em;
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  CALLOUTS                                               │
+   └─────────────────────────────────────────────────────────┘ */
+.callout {
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem 1rem;
+  margin: 1.6rem 0;
+  border-left: 3px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.callout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background: repeating-linear-gradient(
+    -45deg,
+    currentColor,
+    currentColor 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  pointer-events: none;
+}
+
+/* NOTE */
+.callout.note {
+  background: var(--amber-subtle);
+  border-color: var(--amber-bright);
+  color: var(--text-primary);
+}
+
+.callout.note .callout-label {
+  color: var(--amber-bright);
+}
+
+.callout.note .callout-label::before {
+  content: '✦  Note';
+}
+
+/* TIP */
+.callout.tip {
+  background: var(--sage-subtle);
+  border-color: var(--sage-bright);
+}
+
+.callout.tip .callout-label {
+  color: var(--sage-bright);
+}
+
+.callout.tip .callout-label::before {
+  content: '❧  Tip';
+}
+
+/* WARNING / CAUTION */
+.callout.warning {
+  background: var(--crimson-subtle);
+  border-color: var(--crimson-bright);
+}
+
+.callout.warning .callout-label {
+  color: var(--crimson-bright);
+}
+
+.callout.warning .callout-label::before {
+  content: '⚠  Warning';
+}
+
+/* ARCANE / INSIGHT — special LoTM flavour */
+.callout.arcane {
+  background: var(--mystic-subtle);
+  border-color: var(--mystic-bright);
+}
+
+.callout.arcane .callout-label {
+  color: var(--mystic-bright);
+}
+
+.callout.arcane .callout-label::before {
+  content: '✶  Insight';
+}
+
+.callout p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+.callout p + p {
+  margin-top: 0.6rem;
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  CARD                                                   │
+   └─────────────────────────────────────────────────────────┘ */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+  margin: 1.6rem 0;
+  box-shadow: var(--shadow-sm), var(--shadow-inset);
+  position: relative;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--border-bright);
+  box-shadow: var(--shadow-md), var(--shadow-inset);
+}
+
+/* Optional card title */
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card-title::after {
+  content: '';
+  flex: 0 0 20px;
+  height: 1px;
+  background: var(--gold-dim);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.card p + p {
+  margin-top: 0.7rem;
+}
+
+/* Concept card variant */
+.card.concept {
+  border-color: var(--gold-border);
+  background: linear-gradient(135deg, var(--bg-surface), var(--gold-subtle));
+}
+
+/* Definition variant */
+.card.definition {
+  border-color: var(--mystic-border);
+  background: linear-gradient(135deg, var(--bg-surface), var(--mystic-subtle));
+}
+
+.card.definition .card-title {
+  color: var(--mystic-mid);
+}
+
+.card.definition .card-title::after {
+  background: var(--mystic-mid);
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  TABLE                                                  │
+   └─────────────────────────────────────────────────────────┘ */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.6rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-base);
+  box-shadow: var(--shadow-sm);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-surface);
+}
+
+thead {
+  background: var(--bg-overlay);
+  border-bottom: 2px solid var(--border-bright);
+}
+
+thead tr {
+  position: relative;
+}
+
+thead::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-dim), transparent 60%);
+}
+
+th {
+  padding: 0.75rem 1.1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.7rem 1.1rem;
+  border-bottom: 1px solid var(--border-faint);
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  transition: background var(--transition-fast);
+}
+
+tbody tr:hover {
+  background: var(--bg-raised);
+}
+
+/* Zebra stripe — subtle */
+tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.014);
+}
+
+tbody tr:nth-child(even):hover {
+  background: var(--bg-raised);
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  FIGURE / IMAGE                                         │
+   └─────────────────────────────────────────────────────────┘ */
+figure {
+  margin: 2rem 0;
+}
+
+.figure-wrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-base);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.figure-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+  filter: brightness(0.92) contrast(1.04);
+  transition: filter var(--transition-mid);
+}
+
+.figure-wrap img:hover {
+  filter: brightness(1) contrast(1);
+}
+
+figcaption {
+  padding: 0 0.5rem;
+}
+
+/* Figure with label */
+.figure-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  DEFINITION TERM                                        │
+   └─────────────────────────────────────────────────────────┘ */
+.def-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 1.2rem 0;
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.def-item {
+  display: grid;
+  grid-template-columns: minmax(140px, 28%) 1fr;
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.def-item:last-child {
+  border-bottom: none;
+}
+
+.def-term {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold-mid);
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-faint);
+}
+
+.def-desc {
+  padding: 0.75rem 1rem;
+  font-size: 0.93rem;
+  color: var(--text-primary);
+  background: transparent;
+  line-height: 1.65;
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  EQUATION BOX                                           │
+   └─────────────────────────────────────────────────────────┘ */
+.equation-box {
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.4rem;
+  margin: 1.4rem 0;
+  text-align: center;
+  overflow-x: auto;
+  box-shadow: var(--shadow-inset);
+}
+
+/* ┌─────────────────────────────────────────────────────────┐
+   │  BADGE / TAG                                            │
+   └─────────────────────────────────────────────────────────┘ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.2em 0.65em;
+  border-radius: 99px;
+  border: 1px solid;
+}
+
+.badge.gold   { color: var(--gold-bright); border-color: var(--gold-border); background: var(--gold-subtle); }
+.badge.mystic { color: var(--mystic-bright); border-color: var(--mystic-border); background: var(--mystic-subtle); }
+.badge.sage   { color: var(--sage-bright); border-color: rgba(94,171,142,0.28); background: var(--sage-subtle); }
+
+  .home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+    padding: 0.55em 1.3em;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-sm);
+    background: var(--gold-subtle);
+    text-decoration: none;
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .home-btn:hover {
+    background: var(--bg-raised);
+    border-color: var(--gold-mid);
+    box-shadow: var(--shadow-gold);
+    transform: var(--hover-lift);
+  }
+
+  .home-btn-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+  }

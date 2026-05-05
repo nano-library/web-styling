@@ -1,0 +1,159 @@
+.nav-button {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg-surface);          /* replaces --nav */
+  border: 1.5px solid var(--border-base);  /* replaces --border */
+  border-radius: 50px;
+  font-family: 'Cinzel', serif;            /* matches site typography */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition:
+    transform 0.22s cubic-bezier(.34,1.56,.64,1),
+    box-shadow 0.22s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  animation: fadeIn 0.5s ease both;
+}
+
+/* ── Previous (left) ──────────────────────────────── */
+.nav-prev {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  flex-direction: column;
+  padding: 16px 12px;
+  font-size: 0.76rem;
+  color: var(--mystic-mid);                /* replaces --blockquote */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  animation-delay: 0.05s;
+}
+
+.nav-prev .button-icon {
+  writing-mode: horizontal-tb;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.nav-prev:hover {
+  background: var(--mystic-subtle);
+  border-color: var(--mystic-bright);
+  box-shadow: 0 6px 22px rgba(157,136,204,0.25);
+  transform: translateY(-50%) translateX(-4px) scale(1.05);
+}
+
+.nav-prev.is-first {
+  color: var(--text-tertiary);
+  border-color: var(--border-faint);
+  cursor: default;
+  box-shadow: none;
+}
+.nav-prev.is-first:hover {
+  transform: translateY(-50%);
+  background: var(--bg-surface);
+  border-color: var(--border-faint);
+  box-shadow: none;
+}
+
+/* ── Next (right) ─────────────────────────────────── */
+.nav-next {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  flex-direction: column;
+  padding: 16px 12px;
+  font-size: 0.76rem;
+  color: var(--gold-mid);                  /* replaces --h4 */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  animation-delay: 0.1s;
+}
+
+.nav-next .button-icon {
+  writing-mode: horizontal-tb;
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+
+.nav-next:hover {
+  background: var(--gold-subtle);
+  border-color: var(--gold-bright);
+  box-shadow: 0 6px 22px rgba(212,168,75,0.25);
+  transform: translateY(-50%) translateX(4px) scale(1.05);
+}
+
+.nav-next.is-last {
+  color: var(--text-tertiary);
+  border-color: var(--border-faint);
+  cursor: default;
+  box-shadow: none;
+}
+.nav-next.is-last:hover {
+  transform: translateY(-50%);
+  background: var(--bg-surface);
+  border-color: var(--border-faint);
+  box-shadow: none;
+}
+
+/* ── Contents (bottom centre) ────────────────────── */
+.nav-list {
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 11px 22px;
+  font-size: 0.82rem;
+  color: var(--crimson-bright);            /* replaces --h2 */
+  animation-delay: 0.15s;
+}
+
+.nav-list .button-icon {
+  font-size: 1rem;
+}
+
+.nav-list:hover {
+  background: var(--crimson-subtle);
+  border-color: var(--crimson-mid);
+  box-shadow: 0 6px 22px rgba(181,45,58,0.25);
+  transform: translateX(-50%) translateY(-4px) scale(1.04);
+}
+
+/* ── Mobile: all three at the bottom ──────────────── */
+@media (max-width: 680px) {
+  .nav-prev, .nav-next, .nav-list {
+    position: fixed;
+    bottom: 20px;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    writing-mode: horizontal-tb;
+    flex-direction: row;
+    padding: 11px 16px;
+    font-size: 0.78rem;
+    border-radius: 50px;
+  }
+
+  .nav-prev .button-icon,
+  .nav-next .button-icon {
+    margin: 0;
+  }
+
+  .nav-prev  { left: 16px;  bottom: 20px; }
+  .nav-list  { left: 50%;   bottom: 20px; transform: translateX(-50%); }
+  .nav-next  { right: 16px; bottom: 20px; }
+
+  .nav-prev:hover  { transform: scale(1.05) !important; }
+  .nav-next:hover  { transform: scale(1.05) !important; }
+  .nav-prev.is-first:hover,
+  .nav-next.is-last:hover { transform: none !important; }
+
+  .nav-prev .button-label,
+  .nav-next .button-label { display: none; }
+  .nav-list .button-label { font-size: 0.76rem; }
+}

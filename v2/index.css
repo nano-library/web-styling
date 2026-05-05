@@ -1,0 +1,51 @@
+body { 
+    background: var(--bg-void); 
+}
+
+.content-list { 
+    counter-reset: item-counter; 
+}
+
+.content-item  { 
+    counter-increment: item-counter; 
+}
+
+.item-num::before {
+    content: counter(item-counter, decimal-leading-zero);
+}
+
+.module-block { 
+    counter-reset: item-counter; 
+}
+
+.index-intro {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-top: 1.4rem;
+    max-width: 62ch;
+}
+
+.header-rule {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2.5rem 0 0;
+      opacity: 0.5;
+}
+
+.header-rule-line { 
+    flex: 1; 
+    height: 1px; 
+    background: var(--border-base); 
+}
+
+.header-rule-dot  { 
+    width: 4px; 
+    height: 4px; 
+    border-radius: 50%; 
+    background: var(--gold-dim); 
+    flex-shrink: 0; 
+}
