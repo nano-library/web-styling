@@ -1,0 +1,39 @@
+.matrix {
+  display: inline-flex;
+  align-items: stretch;   
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+.matrix-bracket {
+  width: 6px;
+  border: 2px solid var(--text);
+  border-radius: 2px;
+}
+
+.matrix-bracket.open {
+  border-right: none;
+  margin-right: 6px;
+}
+
+.matrix-bracket.close {
+  border-left: none;
+  margin-left: 6px;
+}
+
+.matrix-body {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.matrix-row {
+  display: inline-flex;
+  gap: 14px;
+}
+
+.matrix-cell {
+  min-width: 18px;
+  text-align: center;
+}

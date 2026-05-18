@@ -1,0 +1,36 @@
+@media (max-width: 600px) {
+  .formula-card {
+    padding: 12px 10px;
+    border-radius: 14px;
+  }
+
+  .formula-label {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+
+  .formula {
+    font-size: 0.78rem;    
+    padding: 8px 10px;
+    border-radius: 10px;
+    gap: 2px;
+  }
+
+  .formula-inner {
+    gap: 2px;
+  }
+
+  .formula .frac-num,
+  .formula .frac-den {
+    font-size: 0.75em;
+    padding: 0 3px;
+  }
+
+  .matrix-row { gap: 8px; }
+  .matrix-cell { min-width: 12px; }
+
+  .matrix-bracket {
+    width: 4px;
+    margin: 0 1px;
+  }
+}
